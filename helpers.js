@@ -22,14 +22,14 @@ var currency = function() {
   num = parseFloat(this);
   num = num.toFixed(2);
   return "$"+num.toString();
-}
+};
 
 // Capitalize
 // Example: str = "my awesome string"; str.capitalize();
 // Example Returns: "My awesome string"
 var capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 // CapitalizeAll
 // Example: str = "my awesome string"; str.capitalizeAll();
@@ -39,9 +39,9 @@ var capitalizeAll = function(){
   var new_sentence = [];
   for (var i=0; i < sentence.length; i++) {
     new_sentence.push(sentence[i].charAt(0).toUpperCase()+sentence[i].slice(1));
-  };
+  }
   return new_sentence.join(" ");
-}
+};
 
 // Extend String Prototype
 String.prototype.truncate=truncate;
