@@ -4,7 +4,7 @@
 var new_string,ending,characters,num,sentence;
 
 // Truncate
-// Example: str = "my awesome string"; str.truncate(10);
+// Example: "my awesome string".truncate(10);
 // Example Returns: "my awesome..."
 var truncate = function(characters, ending) {        
   ending = ending ? ending : "...";
@@ -16,7 +16,7 @@ var truncate = function(characters, ending) {
 };
 
 // Currency
-// Example: money = 85; money.currency(); OR money = "85"; money.currency();
+// Example: num = 85; num.currency(); OR "85".currency();
 // Example Returns: "$85.00"
 var currency = function() {
   num = parseFloat(this);
@@ -25,14 +25,14 @@ var currency = function() {
 };
 
 // Capitalize
-// Example: str = "my awesome string"; str.capitalize();
+// Example: "my awesome string".capitalize();
 // Example Returns: "My awesome string"
 var capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
 // CapitalizeAll
-// Example: str = "my awesome string"; str.capitalizeAll();
+// Example: "my awesome string".capitalizeAll();
 // Example Returns: "My Awesome String"
 var capitalizeAll = function(){
   sentence = this.split(" ");
