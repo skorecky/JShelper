@@ -4,100 +4,155 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>JShelper Demo</title>
   <style type="text/css" media="screen">
-  body {
-    font:62.5%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin:0;
-  }
+    body {
+      font:62.5%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin:0;
+    }
   
-  #demo {
-    padding:20px;
-  }
+    #demo {
+      padding:20px;
+    }
   
-  #demo h1 {
-    background:#2070B4;
-    color:#FFF;
-    padding:5px;
-  }
+    #demo h1 {
+      background:#2070B4;
+      color:#FFF;
+      padding:5px;
+    }
   
-  #demo h2 {
-    border-bottom:1px solid #CCC;
-    color:#2070B4;
-  }
+    #demo h2 {
+      border-bottom:1px solid #CCC;
+      color:#2070B4;
+    }
   
-  #demo table {
-    font-size:12px;
-    text-align:left;
-    width:300px;
-  }
+    #demo table {
+      font-size:12px;
+      text-align:left;
+      width:300px;
+    }
   
-  #demo table td,
-  #demo table th {
-    padding:5px;
-  }
+    #demo table td,
+    #demo table th {
+      padding:5px;
+    }
   
-  #demo table th {
-    border-bottom:1px solid #EEE;
-  }
-  #demo pre code {
-    background:#EEE;
-    font-size:12px;
-    padding:5px;
-  }
+    #demo table th {
+      border-bottom:1px solid #EEE;
+    }
+    #demo pre code {
+      background:#EEE;
+      font-size:12px;
+      padding:5px;
+    }
+    
+    #demo dl {
+      overflow:hidden;
+    }
+    
+    #demo dl dt {
+      clear:both;
+      font-size:16px;
+    }
+    
+    #demo dl dd {
+      float:left;
+      margin:0 5px 0 0;
+    }
+    
+    #demo dl dd a {
+      color:#2070B4;
+      display:block;
+    }
   
-  footer {
-    border-top:1px solid #CCC;
-    color:#CCC;
-    padding:20px;
-  }
+    footer {
+      border-top:1px solid #CCC;
+      color:#CCC;
+      padding:20px;
+    }
   
-  footer nav ul {
-    list-style:none;
-    margin:0;
-    overflow:hidden;
-    padding:0;
-  }
+    footer nav ul {
+      list-style:none;
+      margin:0;
+      overflow:hidden;
+      padding:0;
+    }
   
-  footer nav ul li {
-    float:left;
-    margin:0 5px 0 0;
-  }
+    footer nav ul li {
+      float:left;
+      margin:0 5px 0 0;
+    }
   
-  footer nav ul li a {
-    background:#2070B4;
-    color:#FFF;
-    display:block;
-    padding:5px 10px;
-    text-decoration:none;
-  }
+    footer nav ul li a {
+      background:#2070B4;
+      color:#FFF;
+      display:block;
+      padding:5px 10px;
+      text-decoration:none;
+    }
   </style>
 </head>
 <body>
   <div id="demo">
     <h1>JShelper Demo</h1>
-    <h2>Truncate</h2>
-    <table border="0" cellspacing="0" cellpadding="0">
-      <tr><th>Before</th><th>After</th></tr>
-      <tr><td id="truncate_before">my test string</td><td id="truncate_after"></td></tr>
-    </table>
-    <pre><code>"my awesome string".truncate(10);</code></pre>
-    <h2>Currency</h2>
-    <table border="0" cellspacing="0" cellpadding="0">
-      <tr><th>Before</th><th>After</th></tr>
-      <tr><td id="currency_before">85</td><td id="currency_after"></td></tr>
-    </table>
-    <pre><code>"85".currency();</code></pre>
-    <h2>Capitalize</h2>
-    <table border="0" cellspacing="0" cellpadding="0">
-      <tr><th>Before</th><th>After</th></tr>
-      <tr><td id="capitalize_before">this is my sentence.</td><td id="capitalize_after"></td></tr>
-    </table>
-    <pre><code>"my awesome string".capitalize();</code></pre>
-    <h2>CapitalizeAll</h2>
-    <table border="0" cellspacing="0" cellpadding="0">
-      <tr><th>Before</th><th>After</th></tr>
-      <tr><td id="capitalizeall_before">this is my sentence.</td><td id="capitalizeall_after"></td></tr>
-    </table>
-    <pre><code>"my awesome string".capitalizeAll(10);</code></pre>
+    <dl>
+      <dt>C</dt>
+      <dd><a href="#capitalize">Capitalize</a></dd>
+      <dd><a href="#currency">Currency</a></dd>
+      <dt>F</dt>
+      <dd><a href="#first">First</a></dd>
+      <dt>L</dt>
+      <dd><a href="#last">Last</a></dd>
+      <dt>T</dt>
+      <dd><a href="#titlecase">Titlecase</a></dd>
+      <dd><a href="#truncate">Truncate</a></dd>
+    </dl>
+    <section id="capitalize">
+      <h2>Capitalize</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td id="capitalize_before">this is my sentence.</td><td id="capitalize_after"></td></tr>
+      </table>
+      <pre><code>"my awesome string".capitalize();</code></pre>
+    </section>
+    <section id="currency">
+      <h2>Currency</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td id="currency_before">85</td><td id="currency_after"></td></tr>
+      </table>
+      <pre><code>"85".currency();</code></pre>
+    </section>
+    <section id="first">
+      <h2>First</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td id="first_before">word</td><td id="first_after"></td></tr>
+      </table>
+      <pre><code>"word".first(3);</code></pre>
+    </section>
+    <section id="last">
+      <h2>Last</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td id="last_before">word</td><td id="last_after"></td></tr>
+      </table>
+      <pre><code>"word".last(3);</code></pre>
+    </section>
+    <section id="titlecase">
+      <h2>Titlecase</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td id="titlecase_before">this is my sentence.</td><td id="titlecase_after"></td></tr>
+      </table>
+      <pre><code>"my awesome string".titlecase(10);</code></pre>
+    </section>
+    <section id="truncate">
+      <h2>Truncate</h2>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td id="truncate_before">my test string</td><td id="truncate_after"></td></tr>
+      </table>
+      <pre><code>"my awesome string".truncate(10);</code></pre>
+    </section>
   </div>
   <footer>
     <nav>
@@ -114,23 +169,31 @@
   </footer>
   <script type="text/javascript" charset="utf-8" src="helpers.js"></script>
   <script type="text/javascript" charset="utf-8">
-  (function(){
-    // Truncate
-    var truncate_before = document.getElementById("truncate_before").innerHTML;
-    document.getElementById("truncate_after").innerHTML = truncate_before.truncate(10);
+    (function(){
+      // Capitalize
+      var capitalize_before = document.getElementById("capitalize_before").innerHTML;
+      document.getElementById("capitalize_after").innerHTML = capitalize_before.capitalize();
     
-    // Currency
-    var currency_before = document.getElementById("currency_before").innerHTML;
-    document.getElementById("currency_after").innerHTML = currency_before.currency();
+      // Currency
+      var currency_before = document.getElementById("currency_before").innerHTML;
+      document.getElementById("currency_after").innerHTML = currency_before.currency();
+      
+      // First
+      var first_before = document.getElementById("first_before").innerHTML;
+      document.getElementById("first_after").innerHTML = first_before.first(3);
     
-    // Capitalize
-    var capitalize_before = document.getElementById("capitalize_before").innerHTML;
-    document.getElementById("capitalize_after").innerHTML = capitalize_before.capitalize();
+      // Last
+      var last_before = document.getElementById("last_before").innerHTML;
+      document.getElementById("last_after").innerHTML = last_before.last(3);
     
-    // CapitalizeAll
-    var capitalizeall_before = document.getElementById("capitalizeall_before").innerHTML;
-    document.getElementById("capitalizeall_after").innerHTML = capitalizeall_before.capitalizeAll();
-  }());
+      // Titlecase
+      var titlecase_before = document.getElementById("titlecase_before").innerHTML;
+      document.getElementById("titlecase_after").innerHTML = titlecase_before.titlecase();
+    
+      // Truncate
+      var truncate_before = document.getElementById("truncate_before").innerHTML;
+      document.getElementById("truncate_after").innerHTML = truncate_before.truncate(10);
+    }());
   </script>
 </body>
 </html>
