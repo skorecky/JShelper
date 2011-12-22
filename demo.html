@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>JShelper Demo</title>
+  <style type="text/css" media="screen">
+  body {
+    font:62.5%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin:0;
+  }
+  
+  #demo {
+    padding:20px;
+  }
+  
+  #demo h1 {
+    background:#2070B4;
+    color:#FFF;
+    padding:5px;
+  }
+  
+  #demo h2 {
+    border-bottom:1px solid #CCC;
+    color:#2070B4;
+  }
+  
+  #demo table {
+    font-size:12px;
+    text-align:left;
+    width:300px;
+  }
+  
+  #demo table td,
+  #demo table th {
+    padding:5px;
+  }
+  
+  #demo table th {
+    border-bottom:1px solid #EEE;
+  }
+  #demo pre code {
+    background:#EEE;
+    font-size:12px;
+    padding:5px;
+  }
+  
+  footer {
+    border-top:1px solid #CCC;
+    color:#CCC;
+    padding:20px;
+  }
+  
+  footer nav ul {
+    list-style:none;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+  }
+  
+  footer nav ul li {
+    float:left;
+    margin:0 5px 0 0;
+  }
+  
+  footer nav ul li a {
+    background:#2070B4;
+    color:#FFF;
+    display:block;
+    padding:5px 10px;
+    text-decoration:none;
+  }
+  </style>
+</head>
+<body>
+  <div id="demo">
+    <h1>JShelper Demo</h1>
+    <h2>Truncate</h2>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr><th>Before</th><th>After</th></tr>
+      <tr><td id="truncate_before">my test string</td><td id="truncate_after"></td></tr>
+    </table>
+    <pre><code>str = "my awesome string"; str.truncate(10);</code></pre>
+    <h2>Currency</h2>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr><th>Before</th><th>After</th></tr>
+      <tr><td id="currency_before">85</td><td id="currency_after"></td></tr>
+    </table>
+    <pre><code>number = "85"; number.currency();</code></pre>
+    <h2>Capitalize</h2>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr><th>Before</th><th>After</th></tr>
+      <tr><td id="capitalize_before">this is my sentence.</td><td id="capitalize_after"></td></tr>
+    </table>
+    <pre><code>str = "my awesome string"; str.capitalize();</code></pre>
+    <h2>CapitalizeAll</h2>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr><th>Before</th><th>After</th></tr>
+      <tr><td id="capitalizeall_before">this is my sentence.</td><td id="capitalizeall_after"></td></tr>
+    </table>
+    <pre><code>str = "my awesome string"; str.capitalizeAll(10);</code></pre>
+  </div>
+  <footer>
+    <nav>
+      <ul>
+        <li>
+          <a href="http://github.com/skorecky">Fork on GitHub</a>
+        </li>
+        <li>
+          <a href="http://stephenkorecky.com">Made By Stephen Korecky</a>
+        </li>
+      </ul>
+    </nav>
+    <p>Copyright &copy; 2011 Stephen Korecky</p>
+  </footer>
+  <script type="text/javascript" charset="utf-8" src="helpers.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  (function(){
+    // Truncate
+    var truncate_before = document.getElementById("truncate_before").innerHTML;
+    document.getElementById("truncate_after").innerHTML = truncate_before.truncate(10);
+    
+    // Currency
+    var currency_before = document.getElementById("currency_before").innerHTML;
+    document.getElementById("currency_after").innerHTML = currency_before.currency();
+    
+    // Capitalize
+    var capitalize_before = document.getElementById("capitalize_before").innerHTML;
+    document.getElementById("capitalize_after").innerHTML = capitalize_before.capitalize();
+    
+    // CapitalizeAll
+    var capitalizeall_before = document.getElementById("capitalizeall_before").innerHTML;
+    document.getElementById("capitalizeall_after").innerHTML = capitalizeall_before.capitalizeAll();
+  }());
+  </script>
+</body>
+</html>
