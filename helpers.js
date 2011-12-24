@@ -1,7 +1,14 @@
 (function(){
 'use strict';
 // Setup variables
-var new_string,ending,characters,num,sentence;
+var new_string,ending,characters,num,sentence,string;
+
+// At
+// Example: "hello".at(2)
+// Example Returns: "e"
+var at = function(at){
+  return this.substr((at),1);
+};
 
 // Capitalize
 // Example: "my awesome string".capitalize();
@@ -26,12 +33,19 @@ var first = function(limit){
   return this.substr(0,limit);
 };
 
-
 // Last
 // Example: "hello".last(3)
 // Example Returns: "llo"
 var last = function(limit){
   return this.slice(-limit);
+};
+
+// Parameterize
+// Example: "hello world".parameterize()
+// Example Returns: "hello-world"
+var parameterize = function(){
+  string = this.trim();
+  return string.replace(/\s+/g,"-").toLowerCase();
 };
 
 // Titlecase
@@ -44,6 +58,15 @@ var titlecase = function(){
     new_sentence.push(sentence[i].charAt(0).toUpperCase()+sentence[i].slice(1));
   }
   return new_sentence.join(" ");
+};
+
+// Trim
+// Example: " hello  world ".trim()
+// Example Returns: "hello world"
+var trim = function(){
+  string = this.replace(/^\s+/,"");
+  string = string.replace(/\s+$/,"");
+  return string.replace(/\s+/g," ");
 };
 
 // Truncate
@@ -59,11 +82,14 @@ var truncate = function(characters, ending) {
 };
 
 // Extend String Prototype
+String.prototype.at=at;
 String.prototype.capitalize=capitalize;
 String.prototype.currency=currency;
 String.prototype.first=first;
 String.prototype.last=last;
+String.prototype.parameterize=parameterize;
 String.prototype.titlecase=titlecase;
+String.prototype.trim=trim;
 String.prototype.truncate=truncate;
 
 // Extend Number Prototype

@@ -1,3 +1,10 @@
+module("At");
+
+test("test at returns correct value", function() {
+  var str = "awesome".at(1);
+  equal( str, "w");
+});
+
 module("Capitalize");
 
 test("test capitalize returns correct value", function() {
@@ -24,7 +31,6 @@ test("test first returns correct value", function() {
   equal( str, "jagu");
 });
 
-
 module("Last");
 
 test("test last returns correct value", function() {
@@ -32,11 +38,25 @@ test("test last returns correct value", function() {
   equal( str, "guar");
 });
 
+module("Parameterize");
+
+test("test parameterize returns correct value", function() {
+  var str = "this is my SenteNce".parameterize();
+  equal( str, "this-is-my-sentence");
+});
+
 module("Titlecase All");
 
 test("test titlecase returns correct value", function() {
   var str = "this is my sentence".titlecase();
   equal( str, "This Is My Sentence");
+});
+
+module("Trim");
+
+test("test trim returns correct value", function() {
+  var str = " this is    my sentence ".trim();
+  equal( str, "this is my sentence");
 });
 
 module("Truncate");
