@@ -1,9 +1,7 @@
 ### About
-This allows you to get some rails style helpers in your JavaScript projects. There are currently only a few to start with but I plan on adding more over time.
+This light weight (1K min.js) allows you to get some rails style helpers in your JavaScript projects. There are currently only a few to start with but I plan on adding more over time.
 
-Documentation: http://skorecky.github.com/JShelper/
-
-### Usage
+### Documentation
 
 #### at
     "awesome".at(1); // "w"
@@ -25,6 +23,8 @@ Documentation: http://skorecky.github.com/JShelper/
 #### truncate( length,ending = "..." )
     "my awesome string".truncate(10); // "my awesome..."
     "my awesome string".truncate(10,"[...]"); // "my awesome[...]"
+    
+Documentation Page: http://skorecky.github.com/JShelper/
 
 ### Testing
 The helper.js file is tested with qUinit and you can see the test suite at http://skorecky.github.com/JShelper/test/
