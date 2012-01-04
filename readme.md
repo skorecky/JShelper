@@ -5,24 +5,24 @@ Documentation: http://skorecky.github.com/JShelper/
 
 ### Usage
 
-##### at
+#### at
     "awesome".at(1); // "w"
-##### capitalize
+#### capitalize
     "my awesome string".capitalize(); // "My awesome string"
-##### currency
+#### currency
     "85".currency(); // "$85.00"
     cost = 85.67; cost.currency(); // "$85.67"
-##### first( length )
+#### first( length )
     "word".first(3); // "wor"
-##### last( length )
+#### last( length )
     "word".last(3); // "ord"
-##### parameterize
+#### parameterize
     " my AWesome   string ".parameterize(); // "my-awesome-string"
-##### titlecase
+#### titlecase
     "my awesome string".titlecase(); // "My Awesome String"
-##### trim
+#### trim
     " my awesome   string ".trim(); // "my awesome string"
-##### truncate( length,ending = "..." )
+#### truncate( length,ending = "..." )
     "my awesome string".truncate(10); // "my awesome..."
     "my awesome string".truncate(10,"[...]"); // "my awesome[...]"
 
@@ -32,4 +32,8 @@ The helper.js file is tested with qUinit and you can see the test suite at http:
 This file is also regurally tested at http://jshint.com
 
 ### How to Use
-Simply download this repo locally and include helper.js in your html file before anything that calls it. It's written in pure JavaScript so it should work nicely with any JS Framework / Library.
+Simply download this repo locally and include helper.js in your html file before anything that calls it. 
+
+    <script type="text/javascript" src="helpers.min.js"></script>
+    
+It's written in pure JavaScript so it should work nicely with any JS Framework / Library.
