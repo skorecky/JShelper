@@ -32,8 +32,8 @@ The helper.js file is tested with qUinit and you can see the test suite at http:
 This file is also regurally tested at http://jshint.com
 
 ### How to Use
-Simply download this repo locally and include helper.js in your html file before anything that calls it. 
+Simply include helper.js in your html file before anything that calls it. 
 
-    <script type="text/javascript" src="helpers.min.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/skorecky/JShelper/master/helpers.min.js"></script>
     
 It's written in pure JavaScript so it should work nicely with any JS Framework / Library.

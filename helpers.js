@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 // Setup variables
-var new_string,ending,characters,num,sentence,string;
+var new_string,ending,characters,num,sentence,string,param;
 
 // At
 // Example: "hello".at(2)
@@ -81,6 +81,22 @@ var truncate = function(characters, ending) {
   }
 };
 
+// Params
+// Example URL: http://example.com/?test=blah
+// Example: window.location.params("test")
+// Example Returns: "blah"
+window.location.params = function(param) {
+  param = param.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.href);
+  if(results === null){
+    return "";
+  } else {
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+};
+
 // Extend String Prototype
 String.prototype.at=at;
 String.prototype.capitalize=capitalize;
@@ -94,4 +110,4 @@ String.prototype.truncate=truncate;
 
 // Extend Number Prototype
 Number.prototype.currency=currency;
-}());
+})();
