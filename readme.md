@@ -7,7 +7,7 @@ This light weight (1K min.js) allows you to get some rails style helpers in your
     "awesome".at(1); // "w"
 #### capitalize
     "my awesome string".capitalize(); // "My awesome string"
-#### currency
+#### currency("currency type")
     "85".currency(); // "$85.00"
     cost = 85.67; cost.currency(); // "$85.67"
 #### first( length )
@@ -23,6 +23,12 @@ This light weight (1K min.js) allows you to get some rails style helpers in your
 #### truncate( length,ending = "..." )
     "my awesome string".truncate(10); // "my awesome..."
     "my awesome string".truncate(10,"[...]"); // "my awesome[...]"
+#### to_s (to string)
+    10.0.to_s(); // "10"
+#### to_i (to integer)
+    "10.5".to_i(); // 10
+#### to_f (to float)
+    "10.3".to_f(); // 10.3
     
 Documentation Page: http://skorecky.github.com/JShelper/
 
