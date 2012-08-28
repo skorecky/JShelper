@@ -19,6 +19,11 @@ test("test currency returns correct value from string", function() {
   equal( str, "$85.67");
 });
 
+test("test currency returns correct value from string with custom currency type", function() {
+  var str = "85.67".currency("£");
+  equal( str, "£85.67");
+});
+
 test("test currency returns correct value from integer", function() {
   var number = 85; number = number.currency();
   equal( number, "$85.00");
@@ -79,4 +84,30 @@ test("test truncation returns full string if no count passed", function() {
 test("test truncation returns full string if character count is longer than string", function() {
   var str = "my awesome string".truncate(20);
   equal( str, "my awesome string");
+});
+
+module("To String");
+
+test("test to_s converts to string", function() {
+  var str = 10.0.to_s();
+  equal( str, "10");
+});
+
+module("To Integer");
+
+test("test to_i converts to integer form float", function() {
+  var str = 10.5.to_i();
+  equal( str, 10);
+});
+
+test("test to_i converts to integer from string", function() {
+  var str = "10.5".to_i();
+  equal( str, 10);
+});
+
+module("To Float");
+
+test("test to_f converts to float", function() {
+  var str = "10.6".to_f();
+  equal( str, 10.6);
 });

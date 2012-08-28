@@ -1,8 +1,5 @@
 (function(){
 'use strict';
-// Setup variables
-var new_string,ending,characters,num,sentence,string,param;
-
 // At
 // Example: "hello".at(2)
 // Example Returns: "e"
@@ -20,10 +17,14 @@ var capitalize = function() {
 // Currency
 // Example: num = 85; num.currency(); OR "85".currency();
 // Example Returns: "$85.00"
-var currency = function() {
-  num = parseFloat(this);
+var currency = function(currencyType) {
+  var num = parseFloat(this);
   num = num.toFixed(2);
-  return "$"+num.toString();
+  if(currencyType){
+    return currencyType+num.toString();
+  } else {
+    return "$"+num.toString(); 
+  }
 };
 
 // First
@@ -44,7 +45,7 @@ var last = function(limit){
 // Example: "hello world".parameterize()
 // Example Returns: "hello-world"
 var parameterize = function(){
-  string = this.trim();
+  var string = this.trim();
   return string.replace(/\s+/g,"-").toLowerCase();
 };
 
@@ -52,7 +53,7 @@ var parameterize = function(){
 // Example: "my awesome string".titlecase();
 // Example Returns: "My Awesome String"
 var titlecase = function(){
-  sentence = this.split(" ");
+  var sentence = this.split(" ");
   var new_sentence = [];
   for (var i=0; i < sentence.length; i++) {
     new_sentence.push(sentence[i].charAt(0).toUpperCase()+sentence[i].slice(1));
@@ -64,7 +65,7 @@ var titlecase = function(){
 // Example: " hello  world ".trim()
 // Example Returns: "hello world"
 var trim = function(){
-  string = this.replace(/^\s+/,"");
+  var string = this.replace(/^\s+/,"");
   string = string.replace(/\s+$/,"");
   return string.replace(/\s+/g," ");
 };
@@ -80,6 +81,27 @@ var truncate = function(characters, ending) {
     return this.substring(0,characters) + ending;
   }
 };
+
+// To String
+// Example: 10.0.to_s();
+// Example Returns: "10"
+var to_s = function(){
+  return this.toString();
+}
+
+// To Integer
+// Example: "10.5".to_i();
+// Example Returns: 10
+var to_i = function(){
+  return parseInt(this);
+}
+
+// To Float
+// Example: "10.4".to_f();
+// Example Returns: "10.4"
+var to_f = function(){
+  return parseFloat(this);
+}
 
 // Params
 // Example URL: http://example.com/?test=blah
@@ -107,7 +129,12 @@ String.prototype.parameterize=parameterize;
 String.prototype.titlecase=titlecase;
 String.prototype.trim=trim;
 String.prototype.truncate=truncate;
+String.prototype.to_i=to_i;
+String.prototype.to_f=to_f;
 
 // Extend Number Prototype
 Number.prototype.currency=currency;
+Number.prototype.to_s=to_s;
+Number.prototype.to_i=to_i;
+Number.prototype.to_f=to_f;
 })();
