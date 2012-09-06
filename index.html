@@ -154,6 +154,18 @@
       <h2>to_f</h2>
       <pre><code>"10.6".to_f(); // 10.6</code></pre>
     </section>
+    <section id="to_a">
+      <h2>to_a</h2>
+      <pre><code>"test".to_a(); // ["test"]</code></pre>
+    </section>
+    <section id="any">
+      <h2>any</h2>
+      <pre><code>"test".any(); // true</code></pre>
+      <pre><code>"".any(); // false</code></pre>
+      <pre><code>[1,2,3].any(); // true</code></pre>
+      <pre><code>[].any(); // false</code></pre>
+      <pre><code>$$("body").any(); // true</code></pre>
+    </section>
   </div>
   <footer>
     <nav>

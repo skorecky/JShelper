@@ -28,7 +28,14 @@ This light weight (1K min.js) allows you to get some rails style helpers in your
 #### to_i (to integer)
     "10.5".to_i(); // 10
 #### to_f (to float)
-    "10.3".to_f(); // 10.3
+    "10.3".to_f(); // 10.3    
+#### to_a (to array)
+    "test".to_a(); // ["test"]    
+#### any
+    [1,2,3].any(); // true
+    [].any(); // false
+    "".any(); // false
+    $$("body").any() // true
     
 Documentation Page: http://skorecky.github.com/JShelper/
 

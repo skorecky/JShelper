@@ -87,21 +87,51 @@ var truncate = function(characters, ending) {
 // Example Returns: "10"
 var to_s = function(){
   return this.toString();
-}
+};
 
 // To Integer
 // Example: "10.5".to_i();
 // Example Returns: 10
 var to_i = function(){
   return parseInt(this);
-}
+};
 
 // To Float
 // Example: "10.4".to_f();
 // Example Returns: "10.4"
 var to_f = function(){
   return parseFloat(this);
-}
+};
+
+// To Array
+// Example: "test".to_a();
+// Example Returns: ["test"]
+var to_a = function(){
+  return [this];
+};
+
+// Any
+// Example: [1,2,3].any();
+// Example Returns: true
+var any = function(){
+  if (this.length > 1) {
+    return true
+  } else {
+    return false
+  }
+};
+
+var anyObject = function(){
+  var size = 0, key;
+  for (key in this) {
+    if (this.hasOwnProperty(key)) size++;
+  }
+  if (size > 1) {
+    return true
+  } else {
+    return false
+  }
+};
 
 // Params
 // Example URL: http://example.com/?test=blah
@@ -119,6 +149,12 @@ window.location.params = function(param) {
   }
 };
 
+// Extend Object Prototype
+Object.prototype.any=anyObject;
+
+// Extend Array Prototype
+Array.prototype.any=any;
+
 // Extend String Prototype
 String.prototype.at=at;
 String.prototype.capitalize=capitalize;
@@ -131,10 +167,13 @@ String.prototype.trim=trim;
 String.prototype.truncate=truncate;
 String.prototype.to_i=to_i;
 String.prototype.to_f=to_f;
+String.prototype.to_a=to_a;
+String.prototype.any=any;
 
 // Extend Number Prototype
 Number.prototype.currency=currency;
 Number.prototype.to_s=to_s;
 Number.prototype.to_i=to_i;
 Number.prototype.to_f=to_f;
+Number.prototype.to_a=to_a;
 })();

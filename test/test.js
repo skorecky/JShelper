@@ -111,3 +111,42 @@ test("test to_f converts to float", function() {
   var str = "10.6".to_f();
   equal( str, 10.6);
 });
+
+// module("To Array"); //How the fuck do you test arrays?
+// 
+// test("test to_a converts to array", function() {
+//   var str = "test".to_a();
+//   equal( str, ["test"]);
+// });
+
+module("Any");
+
+test("Test any for string", function() {
+  var str = "test".any();
+  equal( str, true);
+});
+
+test("Test any for empty string", function() {
+  var str = "".any();
+  equal( str, false);
+});
+
+test("Test any for array", function() {
+  var str = [1,2,3].any();
+  equal( str, true);
+});
+
+test("Test any for empty array", function() {
+  var str = [].any();
+  equal( str, false);
+});
+
+test("Test any for object", function() {
+  var str = document.getElementsByTagName("body").any();
+  equal( str, true);
+});
+
+test("Test any for empty object", function() {
+  var str = document.getElementsByTagName("blah").any();
+  equal( str, false);
+});
