@@ -23,7 +23,7 @@ var currency = function(currencyType) {
   if(currencyType){
     return currencyType+num.toString();
   } else {
-    return "$"+num.toString(); 
+    return "$"+num.toString();
   }
 };
 
@@ -56,7 +56,7 @@ var titlecase = function(){
   var sentence = this.split(" ");
   var new_sentence = [];
   for (var i=0; i < sentence.length; i++) {
-    new_sentence.push(sentence[i].charAt(0).toUpperCase()+sentence[i].slice(1));
+    new_sentence.push(sentence[i].capitalize());
   }
   return new_sentence.join(" ");
 };
@@ -73,7 +73,7 @@ var trim = function(){
 // Truncate
 // Example: "my awesome string".truncate(10);
 // Example Returns: "my awesome..."
-var truncate = function(characters, ending) {        
+var truncate = function(characters, ending) {
   ending = ending ? ending : "...";
   if(characters <= 0 || characters === undefined || characters >= this.length){
     return this.toString();
@@ -110,27 +110,22 @@ var to_a = function(){
   return [this];
 };
 
+// Flatten
+// Example: [[1,1],[2,2],[3,3]].flatten();
+// Example Returns: [1,1,2,2,3,3]
+var flatten = function(){
+  return [].concat.apply([], this);
+};
+
 // Any
 // Example: [1,2,3].any();
 // Example Returns: true
 var any = function(){
-  if (this.length > 1) {
-    return true
-  } else {
-    return false
-  }
+  return this.length > 0;
 };
 
 var anyObject = function(){
-  var size = 0, key;
-  for (key in this) {
-    if (this.hasOwnProperty(key)) size++;
-  }
-  if (size > 1) {
-    return true
-  } else {
-    return false
-  }
+  return Object.keys(this).any();
 };
 
 // Params
@@ -138,7 +133,8 @@ var anyObject = function(){
 // Example: window.location.params("test")
 // Example Returns: "blah"
 window.location.params = function(param) {
-  param = param.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  // param = param.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  param = param.replace(/[[]/, "[").replace(/[]]/, "]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
   var results = regex.exec(window.location.href);
@@ -154,6 +150,7 @@ Object.prototype.any=anyObject;
 
 // Extend Array Prototype
 Array.prototype.any=any;
+Array.prototype.flatten=flatten;
 
 // Extend String Prototype
 String.prototype.at=at;
