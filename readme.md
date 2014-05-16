@@ -4,14 +4,14 @@ JavaScript projects.
 
 ### Documentation
 
-#### at( index )
+#### at(index)
     "awesome".at(1); // "w"
 #### capitalize()
     "my awesome string".capitalize(); // "My awesome string"
 #### currency("currency type")
     "85".currency(); // "$85.00"
     cost = 85.67; cost.currency(); // "$85.67"
-#### first( length )
+#### first(length)
     "word".first(3); // "wor"
 #### flatten()
     [[1,1],[2,2]].flatten(); // [1,1,2,2]
@@ -23,16 +23,16 @@ JavaScript projects.
     "my awesome string".titlecase(); // "My Awesome String"
 #### trim()
     " my awesome   string ".trim(); // "my awesome string"
-#### truncate( length, ending = "..." )
+#### truncate(length, ending = "...")
     "my awesome string".truncate(10); // "my awesome..."
     "my awesome string".truncate(10,"[...]"); // "my awesome[...]"
-#### to_s (to string)
+#### to_s ()
     10.0.to_s(); // "10"
-#### to_i (to integer)
+#### to_i ()
     "10.5".to_i(); // 10
-#### to_f (to float)
+#### to_f ()
     "10.3".to_f(); // 10.3
-#### to_a (to array)
+#### to_a ()
     "test".to_a(); // ["test"]
 #### any()
     [1,2,3].any(); // true
