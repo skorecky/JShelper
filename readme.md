@@ -1,5 +1,5 @@
 ### About
-This light weight (1K min.js) allows you to get some rails style helpers in your
+This light weight (2K min.js) allows you to get some rails style helpers in your
 JavaScript projects.
 
 ### Documentation
