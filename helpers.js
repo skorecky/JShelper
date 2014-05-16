@@ -17,14 +17,19 @@ var capitalize = function() {
 // Currency
 // Example: num = 85; num.currency(); OR "85".currency();
 // Example Returns: "$85.00"
-var currency = function(currencyType) {
-  var num = parseFloat(this);
-  num = num.toFixed(2);
-  if(currencyType){
-    return currencyType+num.toString();
-  } else {
-    return "$"+num.toString();
+var currency = function (currencyType) {
+  if (currencyType == null) {
+    currencyType = "$";
   }
+  if (typeof this === "string") {
+    number = this.replace(/[^0-9.]/g, '');
+  }
+  var number = parseFloat(this);
+  if (isNaN(number)) {
+    number = 0;
+  }
+  number = number.toFixed(2);
+  return currencyType + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 // First
